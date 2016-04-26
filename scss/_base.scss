@@ -1,0 +1,209 @@
+/* body {
+	background-image: url(../img/background.png);
+	@include container(960px);
+}
+*/
+
+/* default styles */
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+.centerme {
+	text-align: center;
+}
+
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.hide {
+	display: none;
+}
+
+/* page styles */
+
+.home {
+	background-image: url(../img/background1.png);
+	-webkit-background-size: cover;
+}
+
+.contact {
+	background-image: url(../img/background2.png);
+	-webkit-background-size: cover;
+}
+
+/*
+.box {
+	background: rgba(255,255,255,0.65);
+	border: 1px solid rgba(0,0,0,0.5);
+	padding: 5px 10px;
+	margin-bottom: 15px;
+}
+*/
+
+
+.box {
+	padding: 0px 0px;
+}
+
+.twocolumn {
+	width: 49%;
+
+}
+
+.command{
+	font-size: 1.75em;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+
+
+nav, 
+main,
+section,
+aside,
+footer {
+	@include box();
+}
+
+main {
+	@include span(8);
+}
+
+aside {
+	@include span(4);
+}
+
+div, 
+section {
+	@extend .clearfixed;
+}
+
+.gallery img {
+	@include gallery(3);
+}
+
+@include susy-breakpoint($medium) {
+	
+	main {
+		@include span(6);
+	} //main
+
+	aside {
+		@include span(6);
+	} //aside
+
+	.gallery img {
+		@include gallery(6);
+	} //gallery img
+
+} //medium breakpoint
+
+@include susy-breakpoint($small) {
+	
+	main {
+		@include span(12);
+	} //main
+
+	aside {
+		@include span(12);
+	} //aside
+
+	.gallery img {
+		@include gallery(11);
+	} //gallery img
+
+} //medium breakpoint
+
+li {
+	list-style: none;
+	display: inline;
+	padding: 100px;
+	font-family: 'Arial', 'sans-serif';
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 75%
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #00795F;
+}
+
+
+h1 {
+	color: white;
+	font-family: 'Arial', 'sans-serif';
+	letter-spacing: 5px;
+}
+
+h2 {
+	color: #00795F;
+	font-size: 21px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: 'Arial', 'sans-serif';
+}
+
+.push {
+	padding-top: 250px;
+	padding-bottom: 310px;
+}
+
+figure {
+	padding-left: 200px;
+}
+
+.small {
+	font-family: 'Arial';
+	font-weight: bold;
+	font-size: 75%;
+}
+
+p {
+	font-family: 'Arial';
+	font-size: 18px;
+}
+
+
+.portfolio {
+	li {
+		float: left;
+		padding-right: 20px;
+		min-height: 300px;
+		list-style: none;
+			img {
+				@include border-radius(50%);
+			}//img
+
+	}//li
+}
+

@@ -1,0 +1,26 @@
+@mixin box() {
+	background: $transwhite;
+	padding: 10px;
+
+}
+
+@mixin clearfixed() {
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+
+.clearfixed {
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+
+@mixin border-radius($border-radius) {
+	-webkit-border-radius: $border-radius;
+	border-radius: $border-radius;
+}
